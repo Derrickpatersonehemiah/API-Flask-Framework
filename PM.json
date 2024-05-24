@@ -1,0 +1,144 @@
+{
+  "info": {
+      "_postman_id": "f26c0212-1d13-4b14-9f23-520476bd9343",
+      "name": "Flask API Tests",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+      {
+          "name": "Get Static Response - Success",
+          "request": {
+              "method": "GET",
+              "header": [],
+              "body": {},
+              "url": {
+                  "raw": "http://localhost:5000/api",
+                  "host": [
+                      "http://localhost:5000"
+                  ],
+                  "path": [
+                      "api"
+                  ]
+              }
+          },
+          "response": [
+              {
+                  "name": "Status code is 200",
+                  "code": 200,
+                  "header": "Content-Type: application/json",
+                  "body": {
+                      "mode": "raw",
+                      "raw": "{\"message\": \"Hi, Task 4.2 completed succesfully!\", \"status\": \"success\"}"
+                  }
+              }
+          ]
+      },
+      {
+          "name": "404 Error Test",
+          "request": {
+              "method": "GET",
+              "header": [],
+              "body": {},
+              "url": {
+                  "raw": "http://localhost:5000/undefined_route",
+                  "host": [
+                      "http://localhost:5000"
+                  ],
+                  "path": [
+                      "undefined_route"
+                  ]
+              }
+          },
+          "response": [
+              {
+                  "name": "Status code is 404",
+                  "code": 404,
+                  "header": "Content-Type: application/json",
+                  "body": {
+                      "mode": "raw",
+                      "raw": "{\"message\": \"Resource not found.\", \"status\": \"error\"}"
+                  }
+              }
+          ]
+      },
+      {
+          "name": "Method Not Allowed Test",
+          "request": {
+              "method": "POST",
+              "header": [],
+              "body": {},
+              "url": {
+                  "raw": "http://localhost:5000/api",
+                  "host": [
+                      "http://localhost:5000"
+                  ],
+                  "path": [
+                      "api"
+                  ]
+              }
+          },
+          "response": [
+              {
+                  "name": "Status code is 405",
+                  "code": 405
+              }
+          ]
+      },
+      {
+          "name": "Internal Server Error Test",
+          "request": {
+              "method": "GET",
+              "header": [],
+              "body": {},
+              "url": {
+                  "raw": "http://localhost:5000/error",
+                  "host": [
+                      "http://localhost:5000"
+                  ],
+                  "path": [
+                      "error"
+                  ]
+              }
+          },
+          "response": [
+              {
+                  "name": "Status code is 500",
+                  "code": 500,
+                  "header": "Content-Type: application/json",
+                  "body": {
+                      "mode": "raw",
+                      "raw": "{\"message\": \"simulated server error.\", \"status\": \"error\"}"
+                  }
+              }
+          ]
+      },
+      {
+          "name": "Forbidden Error Test",
+          "request": {
+              "method": "GET",
+              "header": [],
+              "body": {},
+              "url": {
+                  "raw": "http://localhost:5000/forbidden",
+                  "host": [
+                      "http://localhost:5000"
+                  ],
+                  "path": [
+                      "forbidden"
+                  ]
+              }
+          },
+          "response": [
+              {
+                  "name": "Status code is 403",
+                  "code": 403,
+                  "header": "Content-Type: application/json",
+                  "body": {
+                      "mode": "raw",
+                      "raw": "{\"message\": \"simulated forbidden error.\", \"status\": \"error\"}"
+                  }
+              }
+          ]
+      }
+  ]
+}
