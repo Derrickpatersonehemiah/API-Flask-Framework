@@ -11,4 +11,5 @@ Result: http://127.0.0.1:5000/Task4.1
 
 2)For Task 4.2 run: 
 --> To run tesst cases in flask framework - python Test_cases_API.py
---> To run tesst cases with newman - start the server/host with - python API_Test.py then trigger - newman run PM.json
+--> To run tesst cases with newman - start the server/host with - python API_Test.py in a terminal 
+then trigger - newman run PM.json -r htmlextra in another ternminal to generate the result.
